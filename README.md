@@ -1,4 +1,4 @@
-A collection of docker compose files used in my Raspberry Pi.
+A collection of docker compose files used on my Raspberry Pi.
 
 ---
 
