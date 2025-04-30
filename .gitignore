@@ -1,2 +1,5 @@
+Grafana-Alloy/config.alloy
 Mealie/mealie-pgdata/
 Muse/muse/
+NGINX-Proxy-Manager/data/
+NGINX-Proxy-Manager/letsencrypt/
