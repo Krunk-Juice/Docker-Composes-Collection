@@ -106,6 +106,7 @@ services:
     playwright-chrome:
 #        hostname: browser-chrome
         hostname: playwright-chrome
+        container_name: changedetection-playwright-chrome
 #        image: selenium/standalone-chrome:4
         image: browserless/chrome
         platform: linux/arm64/v8
@@ -131,6 +132,7 @@ services:
 
     restarter:
         image: docker:cli
+        container_name: changedetection-restarter
         restart: unless-stopped
         volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
         entrypoint: ["/bin/sh","-c"]
@@ -138,7 +140,8 @@ services:
           - |
             while true; do
               if [ "$$(date +'%H:%M')" = '08:00' ]; then
-                docker restart myservice
+                docker restart changedetection changedetection-playwright-chrome
+                sleep 65 # Prevents multiple restarts in the same minute
               fi
               sleep 60
             done
