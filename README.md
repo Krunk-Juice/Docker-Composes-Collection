@@ -14,4 +14,5 @@ Stacks:<br/>
 • [Portainer](https://github.com/portainer/portainer)<br/>
 • [Scrutiny](https://github.com/AnalogJ/scrutiny)<br/>
 • SMARTMonExporter<br/>
+• [Suivi-Bourse](https://github.com/pbrissaud/suivi-bourse)<br/>
 • [TeamSpeak-Prometheus](https://github.com/TilmannF/teamspeak-prometheus)<br/>
