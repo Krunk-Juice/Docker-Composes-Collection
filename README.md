@@ -15,4 +15,5 @@ Stacks:<br/>
 • [Scrutiny](https://github.com/AnalogJ/scrutiny)<br/>
 • SMARTMonExporter<br/>
 • [Suivi-Bourse](https://github.com/pbrissaud/suivi-bourse)<br/>
-• [TeamSpeak-Prometheus](https://github.com/TilmannF/teamspeak-prometheus)<br/>
+• [TeamSpeak3-Server-ARM](https://https://github.com/ertagh/teamspeak3-server-arm)<br/>
+• [TeamSpeak-Prometheus](https://github.com/TilmannF/teamspeak-prometheus)<br/> NOTE: Clone the original TeamSpeak-Prometheus repository and build the Docker image yourself. `docker build -t teamspeak-prometheus .`

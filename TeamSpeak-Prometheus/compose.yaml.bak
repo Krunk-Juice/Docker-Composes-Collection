@@ -5,7 +5,7 @@ services:
     hostname: TeamSpeak-Prometheus
     restart: unless-stopped
     environment:
-      TEAMSPEAK_HOST: teamspeak
+      TEAMSPEAK_HOST: ${TEAMSPEAK_HOST:-172.17.0.1}
       TEAMSPEAK_PORT: 10011
     secrets:
       - TEAMSPEAK_USERNAME
@@ -16,19 +16,9 @@ services:
       sh -c "export TEAMSPEAK_USERNAME=$(cat /run/secrets/TEAMSPEAK_USERNAME) &&
              export TEAMSPEAK_PASSWORD=$(cat /run/secrets/TEAMSPEAK_PASSWORD) &&
              python app.py"
-    networks:
-      - teamspeak-network
-      - back-tier
 
 secrets:
   TEAMSPEAK_USERNAME:
     file: ~/.teamspeak/teamspeakusername.txt
   TEAMSPEAK_PASSWORD:
     file: ~/.teamspeak/teamspeakpassword.txt
-
-networks:
-  teamspeak-network:
-    external: true
-  back-tier:
-    external: true
-    name: internet-monitoring-back-tier

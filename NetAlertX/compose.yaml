@@ -15,7 +15,7 @@ services:
       - /opt/netalertx/db:/app/db
       - /opt/netalertx/api:/app/api
       # (optional) useful for debugging if you have issues setting up the container
-      #- /opt/netalertx/logs:/app/front/log
+      - /opt/netalertx/logs:/app/front/log
     environment:
       - TZ=America/Los_Angeles
       - PORT=20211
