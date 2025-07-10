@@ -8,17 +8,22 @@ services:
       - teamspeak-network
       - back-tier
     environment:
-      TEAMSPEAK_HOST: teamspeak
-      TEAMSPEAK_PORT: 10011
+      TEAMSPEAK_HOST: ${TEAMSPEAK_HOST}
+      TEAMSPEAK_PORT: ${TEAMSPEAK_PORT}
     secrets:
       - TEAMSPEAK_USERNAME
       - TEAMSPEAK_PASSWORD
     ports:
       - 8002:8000
     command: >
-      sh -c "export TEAMSPEAK_USERNAME=$(cat /run/secrets/TEAMSPEAK_USERNAME) &&
+      sh -c 'echo "Waiting for TeamSpeak Server on $TEAMSPEAK_HOST:$TEAMSPEAK_PORT..." &&
+             while ! nc -z $TEAMSPEAK_HOST $TEAMSPEAK_PORT; do
+               sleep 2
+             done &&
+             echo "TeamSpeak Server is up!" &&
+             export TEAMSPEAK_USERNAME=$(cat /run/secrets/TEAMSPEAK_USERNAME) &&
              export TEAMSPEAK_PASSWORD=$(cat /run/secrets/TEAMSPEAK_PASSWORD) &&
-             python app.py"
+             python app.py'
 
 secrets:
   TEAMSPEAK_USERNAME:
