@@ -4,6 +4,9 @@ services:
     container_name: TeamSpeak-Prometheus
     hostname: TeamSpeak-Prometheus
     restart: unless-stopped
+    networks:
+      - teamspeak-network
+      - back-tier
     environment:
       TEAMSPEAK_HOST: teamspeak
       TEAMSPEAK_PORT: 10011
@@ -16,9 +19,6 @@ services:
       sh -c "export TEAMSPEAK_USERNAME=$(cat /run/secrets/TEAMSPEAK_USERNAME) &&
              export TEAMSPEAK_PASSWORD=$(cat /run/secrets/TEAMSPEAK_PASSWORD) &&
              python app.py"
-    networks:
-      - teamspeak-network
-      - back-tier
 
 secrets:
   TEAMSPEAK_USERNAME:

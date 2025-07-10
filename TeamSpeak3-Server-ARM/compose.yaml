@@ -4,6 +4,7 @@ services:
     container_name: TeamSpeak3_Server
     hostname: TeamSpeak3_Server
     image: ertagh/teamspeak3-server:latest-box
+    restart: unless-stopped
     networks:
       - teamspeak-network
     environment:
