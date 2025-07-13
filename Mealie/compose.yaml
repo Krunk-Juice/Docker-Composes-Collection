@@ -35,6 +35,7 @@ services:
       - POSTGRES_PORT=5432
       - POSTGRES_DB=mealie
     restart: unless-stopped
+
   postgres:
     container_name: Postgres
     image: postgres:15
@@ -61,4 +62,4 @@ volumes:
 
 secrets:
   POSTGRES_PASSWORD:
-    file: ~/.mealie/postgrespassword.txt
+    file: ${HOME}/.mealie/postgrespassword.txt
