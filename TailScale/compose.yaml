@@ -1,0 +1,34 @@
+#version: "3.7"
+services:
+  tailscale-subnet-router:
+    image: tailscale/tailscale:latest
+    container_name: Tailscale-Subnet-Router
+    hostname: Raspberry-Pi-Subnet-Router
+    network_mode: host
+    privileged: true
+    environment:
+      TS_USERSPACE: false
+      TS_EXTRA_ARGS: --advertise-tags=tag:container
+      TS_HOSTNAME: Raspberry-Pi-Subnet-Router
+      TS_ROUTES: 192.168.1.0/24
+    secrets:
+      - TS_AUTHKEY
+    volumes:
+      - tailscale-data:/var/lib/tailscale
+      - tailscale-config:/config
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+      - net_raw
+    restart: unless-stopped
+
+secrets:
+  TS_AUTHKEY:
+    file: ${HOME}/.tailscale/ts_authkey.txt
+
+volumes:
+  tailscale-data:
+    driver: local
+  tailscale-config:
+    driver: local
