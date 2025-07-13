@@ -1,4 +1,4 @@
-#Docker Compose Collection
+# Docker Compose Collection
 
 A collection of docker compose files used on my Raspberry Pi.
 
@@ -21,5 +21,6 @@ Stacks:<br/>
 • [TeamSpeak3-Server-ARM](https://github.com/ertagh/teamspeak3-server-arm)<br/>
 • [TeamSpeak-Prometheus](https://github.com/TilmannF/teamspeak-prometheus) NOTE: Clone the original TeamSpeak-Prometheus repository and build the Docker image yourself. `docker build -t teamspeak-prometheus .`<br/>
 
-##TODO
+## TODO
+
 https://tailscale.com/blog/docker-tailscale-guide
