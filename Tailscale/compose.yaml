@@ -1,15 +1,15 @@
 #version: "3.7"
 services:
-  tailscale-subnet-router:
+  tailscale:
     image: tailscale/tailscale:latest
-    container_name: Tailscale-Subnet-Router
-    hostname: Raspberry-Pi-Subnet-Router
+    container_name: Tailscale
+    hostname: RaspberryPi4
     network_mode: host
     privileged: true
     environment:
       TS_USERSPACE: false
       TS_EXTRA_ARGS: --advertise-tags=tag:container
-      TS_HOSTNAME: Raspberry-Pi-Subnet-Router
+      TS_HOSTNAME: RaspberryPi4
     env_file:
       - ${HOME}/.tailscale/.env
     volumes:
