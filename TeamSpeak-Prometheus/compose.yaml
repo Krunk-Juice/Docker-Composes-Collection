@@ -27,9 +27,9 @@ services:
 
 secrets:
   TEAMSPEAK_USERNAME:
-    file: ~/.teamspeak/teamspeakusername.txt
+    file: ${HOME}/.teamspeak/teamspeakusername.txt
   TEAMSPEAK_PASSWORD:
-    file: ~/.teamspeak/teamspeakpassword.txt
+    file: ${HOME}/.teamspeak/teamspeakpassword.txt
 
 networks:
   teamspeak-network:

@@ -13,4 +13,4 @@ services:
       - ENABLE_SPONSORBLOCK=true
       - SPONSORBLOCK_TIMEOUT=5
     env_file:
-      - ~/.muse/.env
+      - ${HOME}/.muse/.env
