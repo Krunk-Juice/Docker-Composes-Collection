@@ -16,4 +16,3 @@ services:
     environment:
       - DISABLE_ADDITIONAL_FEATURES=false
       - LANGS=en_US
-    command: ["/bin/sh", "-c", "sleep 300 && exec /bin/sh"]
