@@ -9,6 +9,7 @@ Stacks:<br/>
 - [AutoDelete](https://github.com/riking/AutoDelete)<br/>
 - [ChangeDetection.io](https://github.com/dgtlmoon/changedetection.io)<br/>
 - [Grafana-Alloy](https://github.com/grafana/alloy)<br/>
+- [Linkwarden](https://github.com/linkwarden/linkwarden)<br/>
 - [Mealie](https://github.com/mealie-recipes/mealie)<br/>
 - [Muse](https://github.com/museofficial/muse)<br/>
 - [NetAlertX](https://github.com/jokob-sk/NetAlertX)<br/>
